@@ -8,7 +8,7 @@ class AIService:
         self.url = "https://api.groq.com/openai/v1/chat/completions"
 
     def yanit_uret(self, mesaj):
-   if not self.api_key:
+    if not self.api_key:
             return "Sistem şu an demo modunda. Lütfen API anahtarınızı kontrol edin."
 
         headers = {
