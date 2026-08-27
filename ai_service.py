@@ -16,13 +16,13 @@ class AIService:
             "Content-Type": "application/json"
         }
         
- payload = { 
-    "model": "llama-3.3-70b-versatile",
-    "messages": [
-        {"role": "system", "content": Config.BUSINESS_CONTEXT},
-        {"role": "user", "content": mesaj}
-    ]
-}
+payload = {
+             "model": "llama-3.3-70b-versatile",
+             "messages": [
+                 {"role": "system", "content": Config.BUSINESS_CONTEXT},
+                 {"role": "user", "content": mesaj}
+             ]
+         }
 
         try:
             response = requests.post(self.url, json=payload, headers=headers)
