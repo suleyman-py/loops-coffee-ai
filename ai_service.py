@@ -8,6 +8,31 @@ class AIService:
         self.url = "https://api.groq.com/openai/v1/chat/completions"
 
     def yanit_uret(self, mesaj):
+if not self.api_key:
+            return "Sistem şu an demo modunda. Lütfen API anahtarınızı kontrol edin."
 
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json"
+        }
+
+        payload = {
+            "model": "llama-3.3-70b-versatile",
+            "messages": [
+                {"role": "system", "content": Config.BUSINESS_CONTEXT},
+                {"role": "user", "content": mesaj}
+            ]
+        }
+
+        try:
+            response = requests.post(self.url, json=payload, headers=headers)
+            print(f"--- GROQ STATUS CODE: {response.status_code} ---")
+            print(f"--- GROQ RESPONSE: {response.text} ---")
+            
+            data = response.json()
+            return data["choices"][0]["message"]["content"]
+        except Exception as e:
+            print(f"--- GROQ ERROR: {e} ---")
+            return "Üzgünüm, şu anda yapay zeka servisine bağlanırken bir hata oluştu."
 
 ai_service = AIService()
