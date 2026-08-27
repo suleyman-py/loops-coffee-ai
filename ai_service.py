@@ -17,7 +17,7 @@ class AIService:
         }
         
         payload = {
-            "model": "llama-3.1-8b-instant",
+            "model": "llama-3.3-70b-versatile",
             "messages": [
                 {"role": "system", "content": Config.BUSINESS_CONTEXT},
                 {"role": "user", "content": mesaj}
