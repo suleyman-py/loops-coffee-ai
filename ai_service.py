@@ -16,11 +16,11 @@ class AIService:
             "Content-Type": "application/json"
         }
         
-        payload = {
-    "model": "llama-3.1-8b-instant",
+   payload = {
+    "model": "llama-3.3-70b-versatile",
     "messages": [
         {"role": "system", "content": Config.BUSINESS_CONTEXT},
-        {"role": "user", "content": mesaj}
+        {"role": "user", "content": mesاج}
     ]
 }
 
