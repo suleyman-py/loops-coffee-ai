@@ -24,7 +24,7 @@ payload = {
              ]
          }
 
-        try:
+         try:
             response = requests.post(self.url, json=payload, headers=headers)
             print(f"--- GROQ STATUS CODE: {response.status_code} ---")
             print(f"--- GROQ RESPONSE: {response.text} ---")
