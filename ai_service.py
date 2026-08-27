@@ -26,9 +26,11 @@ class AIService:
 
         try:
             response = requests.post(self.url, json=payload, headers=headers)
+            print(f"--- GROQ STATUS CODE: {response.status_code} ---")
+            print(f"--- GROQ RESPONSE: {response.text} ---")
+            
             data = response.json()
             return data['choices'][0]['message']['content']
         except Exception as e:
+            print(f"--- AI SERVICE HATA DETAYI: {e} ---")
             return "Üzgünüm, şu an bağlantı kuramıyorum. Lütfen daha sonra tekrar deneyin."
-
-ai_service = AIService()
