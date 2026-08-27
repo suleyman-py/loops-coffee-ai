@@ -34,3 +34,5 @@ class AIService:
         except Exception as e:
             print(f"--- AI SERVICE HATA DETAYI: {e} ---")
             return "Üzgünüm, şu an bağlantı kuramıyorum. Lütfen daha sonra tekrar deneyin."
+
+ai_service = AIService()
